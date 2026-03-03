@@ -1,20 +1,11 @@
-use crate::models::Pipeline;
-use std::sync::Mutex;
+use sqlx::PgPool;
 
 pub struct AppState {
-    pub pipelines: Mutex<Vec<Pipeline>>,
+    pub db: PgPool,
 }
 
 impl AppState {
-    pub fn new() -> Self {
-        Self {
-            pipelines: Mutex::new(Vec::new()),
-        }
-    }
-}
-
-impl Default for AppState {
-    fn default() -> Self {
-        Self::new()
+    pub fn new(db: PgPool) -> Self {
+        Self { db }
     }
 }

@@ -1,11 +1,10 @@
-pub mod state;
-
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize, sqlx::Type)]
 #[serde(rename_all = "lowercase")]
+#[sqlx(type_name = "varchar20")]
 pub enum StageStatus {
     Pending,
     Running,
@@ -64,4 +63,5 @@ pub struct UpdateStageStatusDto {
     pub status: StageStatus,
 }
 
+pub mod state;
 pub use state::AppState;
