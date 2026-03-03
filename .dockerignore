@@ -1,0 +1,6 @@
+target
+.git
+frontend
+.env
+.env.*
+!.env.example
