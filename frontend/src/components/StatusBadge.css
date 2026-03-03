@@ -1,0 +1,28 @@
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.status-badge.pending {
+  background-color: #f3f4f6;
+  color: #6b7280;
+}
+
+.status-badge.running {
+  background-color: #dbeafe;
+  color: #2563eb;
+}
+
+.status-badge.success {
+  background-color: #d1fae5;
+  color: #059669;
+}
+
+.status-badge.failed {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
