@@ -2,7 +2,7 @@ FROM rust:1.75 AS builder
 
 WORKDIR /app
 
-RUN apt-get update && apt-get install -y pkg-config libssl-dev
+RUN apt-get update && apt-get install -y pkg-config libssl-dev libpq-dev
 
 COPY Cargo.toml Cargo.lock ./
 COPY src ./src
